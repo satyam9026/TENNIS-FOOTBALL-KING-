@@ -51,19 +51,15 @@
       padding: 22px 18px 56px 18px;
       color: #fff;
       position: relative;
+      text-align: center;
     }
 
-    .badge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
+    /* Logo center with verified below */
     .logo-wrap {
       display: flex;
-      gap: 12px;
+      flex-direction: column;
       align-items: center;
+      gap: 8px;
     }
 
     .logo {
@@ -123,6 +119,9 @@
       font-size: 13px;
       font-weight: 600;
       color: rgba(255,255,255,0.95);
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .stats {
@@ -247,6 +246,11 @@
       padding: 12px 18px 20px;
     }
 
+    .legal a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
     @media (max-width:420px) {
       .card { width: 92%; }
       .title { font-size: 22px; }
@@ -257,17 +261,14 @@
 
   <div class="card" role="region" aria-label="Raja Tennis card">
     <div class="card-top">
-      <div class="badge-row">
-        <div class="logo-wrap">
-          <div class="logo" aria-hidden="true">
-            <img alt="logo" src="image.png" onerror="this.style.opacity=.06; this.style.background='linear-gradient(45deg,#2b9cff,#1bc47d)';" />
-          </div>
-          <div>
-            <div class="verified" title="Verified">
-              <span class="dot" aria-hidden="true"></span>
-              VERIFIED
-            </div>
-          </div>
+      <div class="logo-wrap">
+        <div class="logo" aria-hidden="true">
+          <img alt="logo" src="image.png" 
+               onerror="this.style.opacity=.06; this.style.background='linear-gradient(45deg,#2b9cff,#1bc47d)';" />
+        </div>
+        <div class="verified" title="Verified">
+          <span class="dot" aria-hidden="true"></span>
+          VERIFIED
         </div>
       </div>
 
@@ -326,11 +327,11 @@
       </a>
     </div>
 
-<div class="legal">
-  <a href="https://wa.me/+919532473116" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: underline;">
-    ShiviAddAngency
-  </a>
-</div>
+    <div class="legal">
+      <a href="https://wa.me/+919532473116" target="_blank" rel="noopener noreferrer">
+        ShiviAddAngency
+      </a>
+    </div>
   </div>
 
 </body>
