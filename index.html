@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Raja Tennis — Mock Card</title>
 
   <!-- Google font -->
@@ -27,7 +27,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,#e9eef3 0%, #f7fbff 100%);
+      background: linear-gradient(180deg, #e9eef3 0%, #f7fbff 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -37,12 +37,14 @@
     }
 
     .card {
-      width: 360px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 360px;
       background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,251,253,0.95));
       border-radius: 18px;
       box-shadow: 0 10px 30px rgba(17,24,39,0.08);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
       position: relative;
     }
 
@@ -50,11 +52,10 @@
       background: linear-gradient(180deg,#1f3b49 0%, #2b4a57 70%);
       padding: 22px 18px 56px 18px;
       color: #fff;
-      position: relative;
       text-align: center;
+      position: relative;
     }
 
-    /* Logo center with verified below */
     .logo-wrap {
       display: flex;
       flex-direction: column;
@@ -108,26 +109,9 @@
       letter-spacing: 0.6px;
     }
 
-    .subtag {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      margin-top: 8px;
-      background: rgba(255,255,255,0.06);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.95);
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     .stats {
-      position: relative;
-      top: -28px;
       padding: 0 18px 18px 18px;
+      margin-top: -2px;
     }
 
     .stat-grid {
@@ -139,11 +123,14 @@
       box-shadow: 0 6px 18px rgba(17,24,39,0.06);
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .stat {
-      flex: 1;
+      flex: 1 1 30%;
       text-align: center;
+      min-width: 80px;
+      margin: 6px 0;
     }
 
     .stat h3 {
@@ -181,6 +168,11 @@
       gap: 12px;
       align-items: center;
       box-shadow: 0 6px 12px rgba(17,24,39,0.03);
+      transition: transform 0.2s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-2px);
     }
 
     .feature .icon {
@@ -228,6 +220,11 @@
       cursor: pointer;
       box-shadow: 0 10px 24px rgba(255,107,45,0.18);
       text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
     }
 
     .cta .tg {
@@ -251,9 +248,11 @@
       text-decoration: underline;
     }
 
-    @media (max-width:420px) {
+    @media (max-width: 420px) {
       .card { width: 92%; }
       .title { font-size: 22px; }
+      .stat-grid { flex-direction: column; gap: 10px; }
+      .stat.middle { border: none; padding: 0; }
     }
   </style>
 </head>
@@ -273,7 +272,6 @@
       </div>
 
       <div class="title">TENNIS FOOTBALL KING</div>
-      <div class="subtag">ATP &amp; WTA LIVE</div>
     </div>
 
     <div class="stats">
@@ -291,30 +289,38 @@
           <p>DAILY TIPS</p>
         </div>
       </div>
+    </div>
 
-      <div class="features">
-        <div class="feature">
-          <div class="icon">▶</div>
-          <div class="meta">
-            <h4>In-Play Set Winners</h4>
-            <p>High odds predictions live.</p>
-          </div>
+    <div class="cta-wrap">
+      <a href="https://t.me/+Z5Su-749G0ZiYTU1" target="_blank" rel="noopener noreferrer"
+         class="cta" aria-label="Join Telegram Channel Now">
+        <span class="tg" aria-hidden="true">✈</span>
+        JOIN CHANNEL NOW
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">▶</div>
+        <div class="meta">
+          <h4>In-Play Set Winners</h4>
+          <p>High odds predictions live.</p>
         </div>
+      </div>
 
-        <div class="feature">
-          <div class="icon">🏆</div>
-          <div class="meta">
-            <h4>Grand Slam Specials</h4>
-            <p>Exclusive picks for Majors.</p>
-          </div>
+      <div class="feature">
+        <div class="icon">🏆</div>
+        <div class="meta">
+          <h4>Grand Slam Specials</h4>
+          <p>Exclusive picks for Majors.</p>
         </div>
+      </div>
 
-        <div class="feature">
-          <div class="icon">🛡️</div>
-          <div class="meta">
-            <h4>Zero Loss Recovery</h4>
-            <p>Money management strategy.</p>
-          </div>
+      <div class="feature">
+        <div class="icon">🛡️</div>
+        <div class="meta">
+          <h4>Zero Loss Recovery</h4>
+          <p>Money management strategy.</p>
         </div>
       </div>
     </div>
@@ -328,9 +334,7 @@
     </div>
 
     <div class="legal">
-      <a href="https://wa.me/+919532473116" target="_blank" rel="noopener noreferrer">
-        ShiviAddAngency
-      </a>
+      &copy; 2025 Raja Tennis
     </div>
   </div>
 
